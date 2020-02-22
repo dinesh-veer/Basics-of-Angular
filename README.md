@@ -1,5 +1,7 @@
 # SampleTutorial
 
+It includes routing, Pure/Impure pipes, servies, two way data binding and lots of other stuff.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
