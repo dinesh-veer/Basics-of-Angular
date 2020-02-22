@@ -1,0 +1,39 @@
+<div class="border-solid">
+<p>powser-booster works!</p>
+<div>
+    Power Booster 
+    <div>
+        Normal POwer <input [(ngModel)]="power"/><br>
+        Booster     <input [(ngModel)]="factor"/>
+        <br>
+
+        Calculation of above is {{power | exponential : factor}}
+    </div>
+    <div>
+        <input type=number #add > 
+        <button (click)="addValue(add.value)">Add Value</button>
+    </div>
+    {{array | json}}<br>
+    Sum of array using Pure pipe is {{array | pure :"sum"}}<br>
+    Sum of array using Impure pipe is {{array | impure :"sum"}}<br>
+
+    <br>
+    Multiplication on primitive elements using both pipes: <br>
+
+    Multiplication by 2 impure pipe is {{lastNumber|impure:"multi"}}<br>
+    Multiplication by 2 pure pipe is {{lastNumber|pure:"multi"}}
+    
+    <br>
+    <div style="border: turquoise ,1    0px;">
+        Counter by Async pipe = {{counter$ |async}}<br>
+        Counter by subscribe = {{count}}
+    </div>
+
+    <div>
+        Parameter from link using params method :{{id}}<br>
+        Parameter using ParamaterMap is {{id1}}
+    </div>
+
+</div>
+
+</div>

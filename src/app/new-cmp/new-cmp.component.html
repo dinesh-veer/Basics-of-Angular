@@ -1,0 +1,78 @@
+<div class="border-dotted">
+<p>new-cmp works!<br>
+{{title}}
+{{newcomponent}}
+
+</p>
+
+<div *ngFor= "let name of names">{{name}}</div>
+Select :
+<select (change)="onChange($event)">
+    <option *ngFor= "let name of names" value={{name}} #value1>{{name}}</option>
+</select>
+Hello {{person}}
+<br>
+Another Select Example:
+<select (change)="withChangeModel(selectedName)" #selectedName>
+    <option *ngFor= "let name of names" value={{name}} >{{name | uppercase}}</option>
+</select>
+<br>
+<div *ngIf="available; else unavailable">This is available</div>
+<ng-template #unavailable>This is unavailable</ng-template>
+<br>
+<div [ngSwitch]="switchValue">
+    <div *ngSwitchCase="'switch'" [ngStyle]="{ 'background' : available==true ? 'blue' :'red' } ">Switch value</div>
+    <div *ngSwitchCase="'switch1'">Switch1 value</div>
+    <div *ngSwitchCase="'switch2'">Switch2 value</div>
+    <div *ngSwitchDefault>Default case</div>
+</div>
+<br>
+{{toggleValue}}
+<div (click)="onDivClick()">
+    <button (click)="onClick()">Button Click</button>
+</div>
+<br>
+Property binding:
+<div>
+    <img [src]="angular7Logo"/>
+</div>
+
+<div style = "text-align:center"> 
+    <span changeText >Welcome to {{title}}.</span> 
+ </div>
+
+<div style = "width:100%;">  
+    <div style = "width:40%;float:left;border:solid 1px black;">  
+      <h1>Uppercase Pipe</h1>  
+      <b>{{title | uppercase}}</b><br/>  
+      <h1>Lowercase Pipe</h1>  
+      <b>{{title | lowercase}}</b>  
+      <h1>Currency Pipe</h1>  
+      <b>{{6589.23 | currency:"USD"}}</b><br/>  
+      <b>{{6589.23 | currency:"USD":true}}</b> //Boolean true is used to get the sign of the currency.  
+     <!--e currency pipe has been changed in Angular v5. 
+        The symbolDisplay option (third parameter) is now a string instead of a boolean. 
+                The accepted values are "code", "symbol" or "symbol-narrow".-->
+      <h1>Date pipe</h1>  
+      <b>{{todaydate | date:'d/M/y'}}</b><br/>  
+      <b>{{todaydate | date:'shortTime'}}</b>  
+      <h1>Decimal Pipe</h1>  
+      <b>{{ 454.78787814 | number: '3.4-4' }}</b> // 3 is for main integer, 4 -4 are for integers to be displayed.  
+    </div>  
+    <div style = "width:40%;float:left;border:solid 1px black;">  
+      <h1>Json Pipe</h1>  
+      <b>{{ jsonval | json }}</b>  
+      <h1>Percent Pipe</h1>  
+      <b>{{00.54565 | percent}}</b>  
+      <h1>Slice Pipe</h1>  
+      <b>{{months | slice:2:6}}</b>  
+      // here 2 and 6 refers to the start and the end index  
+
+      <div>
+          The birthdate is {{todaydate | date :format}}
+          <br>
+          <button (click)="toggleFormat()">Toggle Format</button>
+      </div>
+    </div>  
+  </div> 
+</div>
